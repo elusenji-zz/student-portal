@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block pagetitle %}Latest News {% endblock pagetitle %}
+{% block content %}
+<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+					<div class="col-md-12">
+                        <div class="card">
+                            <div class="header">                     
+                                <h4 class="title">{{ post.title }}</h4>
+                                <p class="category">Category: {{ post.category }}
+                                 <i class="fa fa-clock"></i>Published: {{ post.published_date }}
+                            	</p>
+                            	<br>
+                            	<p>{{ post.text }}</p>
+                            </div>
+                            <hr>
+                       
+                        </div>
+                    </div>
+                   </div>
+                   <div class="col-md-4 text-center">
+                   		<a href="/"><button id="singlebutton" name="singlebutton" class="btn btn-info btn-fill">Return to the Latest News</button></a>
+                   </div>
+                 </div>
+              </div>
+        
+{% endblock content %}

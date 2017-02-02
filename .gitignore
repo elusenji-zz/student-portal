@@ -1,0 +1,6 @@
+__pycache__
+.env
+*.pyc
+env/
+portal.sublime-project
+portal.sublime-workspace

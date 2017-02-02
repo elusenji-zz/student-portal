@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block head_title %}Latest News{% endblock head_title %}
+{% block pagetitle %}Latest News {% endblock pagetitle%}
+{% block content %}
+<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+	<div class="col-md-12">
+                        <div class="card">
+                      {% if posts %}
+                        {% for post in posts %}
+                            <div class="header">                     
+                                <h4 class="title">
+                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                </h4>
+                                <a href="#" class="category">Category: {{ post.category }}</a>
+                                 <i class="fa fa-clock"></i>Published: {{ post.published_date }}
+                            	</p>
+                            	<br>
+                            	<p>{{ post.text|truncatechars:150 }}</p>
+                            	<p><a href="{{ post.get_absolute_url }}">Read More</a></p>
+                            </div>
+                            <hr>
+                          {% endfor %}
+                      {% else %}
+                        <p>There are no latest news items. Please check back!</p>
+                       {% endif %}
+                        </div>
+                    </div>
+                   </div>
+                 </div>
+              </div>
+        
+{% endblock content %}
